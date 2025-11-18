@@ -1,0 +1,36 @@
+import time
+import random
+
+print("=== DINO JUMP GAME ===")
+print("Press ENTER to jump over obstacles!")
+print("Game starts in 3 seconds...")
+time.sleep(3)
+
+score = 0
+
+while True:
+    obstacle = random.choice([0, 1])   # 0 = no obstacle, 1 = obstacle
+
+    if obstacle == 1:
+        print("\nObstacle ahead! Press ENTER to jump!")
+        start = time.time()
+        inp = input()
+        reaction = time.time() - start
+
+        if inp == "":
+            if reaction <= 1.0:
+                print("You jumped! ✔")
+                score += 1
+            else:
+                print("Too slow! ❌ GAME OVER")
+                break
+        else:
+            print("Wrong key! ❌ GAME OVER")
+            break
+    else:
+        print("Path is clear...")
+
+    time.sleep(1)
+
+print("\nYour Score:", score)
+print("Thanks for playing!")
