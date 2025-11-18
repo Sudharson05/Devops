@@ -1,0 +1,5 @@
+/target
+*.class
+*.var
+.vscode/
+.DS_Store
